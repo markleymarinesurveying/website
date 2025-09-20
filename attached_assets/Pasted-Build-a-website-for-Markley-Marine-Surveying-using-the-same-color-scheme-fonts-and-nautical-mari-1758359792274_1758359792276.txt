@@ -1,0 +1,80 @@
+Build a website for Markley Marine Surveying using the same color scheme, fonts, and nautical / marine theme as the current site (markleymarinesurveying.com). The goal is to modernize design, improve usability, and enhance SEO, while adding new features: a Gallery page and a Quote / Service Estimate form.
+
+Features and Pages to include:
+
+Home page
+  • Hero section with a strong image of a vessel, overlaid title ("Pre‑Purchase & Insurance Marine Surveyors in Florida") and CTA button ("Get a Quote" / "Schedule a Survey").
+  • Brief intro about Markley Marine Surveying, certification credentials (SAMS, ABYC etc.), geographic coverage (Florida coasts).
+  • Highlights of services offered (pre‑purchase, insurance, appraisal, inspections).
+  • “Why Choose Us” section: credibility, standards, experience, unbiased surveys.
+  • Testimonials / case‑snippet (if possible).
+  • Footer with contact info, service areas, social / legal (if any).
+
+Services page
+  • Individual sections for each service: Pre‑Purchase Survey; Insurance Survey; Appraisal Survey; Vessel Inspection; Consultations.
+  • For each: what’s involved, what clients can expect, benefits.
+  • CTA to quote form or contact.
+
+Gallery page
+  • Grid display of recent boats/vessels that have been surveyed.
+  • For each gallery item: 1‑3 images, vessel type, year/make/model (if available), location, date of service, what survey was done.
+  • Ability to add new items easily via some content file / admin panel.
+  • Load images efficiently (optimize size, lazy load, alt text describing vessel + service).
+
+About Us
+  • Background of business, credentials (SAMS, ABYC, Chapman School etc.), mission & values.
+  • Possibly a photo of the surveyor / team.
+  • Why clients can trust them.
+
+Contact & Quote form page (or combined Contact/Quote)
+  • Contact info: phone, email, possibly map (if location address).
+  • Quote / Estimate request form with fields: name, email, phone, vessel type & details, service type needed, location, desired date/time, optional images, comments.
+  • Submission handling: send to business email + confirmation message to user.
+
+Design & Layout Requirements:
+
+Keep the existing color palette and fonts (extract from current site).
+
+Use clean, professional layout: whitespace; clear typography; large images; responsive design (mobile, tablet, desktop).
+
+Navigation menu: prominent, consistent, includes CTA (“Get a Quote”). Sticky header is a plus.
+
+Footer: contact info, service areas, certifications / logos, perhaps small map or list of cities served.
+
+SEO & Technical Requirements:
+
+Meta titles / descriptions unique per page, with relevant keywords (marine survey, boat inspection, Florida, etc.).
+
+Image optimization (file size, alt tags).
+
+Clean URLs, structured headings (H1, H2, etc.).
+
+Schema markup for Local Business and image gallery.
+
+Fast load times; lazy load images in gallery.
+
+Sitemap.xml and robots.txt.
+
+SSL (HTTPS).
+
+Content Strategy & Maintenance:
+
+The Gallery must be easy to update regularly.
+
+Optionally add FAQ or blog later.
+
+Encourage testimonials / case stories.
+
+Ensure pages are structured so content can be expanded (e.g. more services added).
+
+Deliverables:
+
+Fully responsive website with all above pages.
+
+Working quote form.
+
+Instructions on how to update or add gallery items.
+
+SEO ready (meta tags, schema, etc.).
+
+Deployed version (if Replit: provide live URL) with performance tested.
