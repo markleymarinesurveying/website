@@ -52,7 +52,7 @@ export default function AboutPage() {
                 Meet Steven Markley
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Owner Steven Markley leads a team of dedicated professionals who share a deep respect for the marine industry and a lifelong passion for boats. Steven is a graduate of the University of Maryland and the Chapman School of Seamanship - Yacht and Small Craft Surveying, is ABYC Standards Certified, and an SA Level member of the Society of Accredited Marine Surveyors® (SAMS®). He is also an experienced former 100 Ton Master Captain.
+                Owner Steven Markley is a dedicated professional with a deep respect for the marine industry and a lifelong passion for boats. Steven is a graduate of the University of Maryland and the Chapman School of Seamanship - Yacht and Small Craft Surveying, is ABYC Standards Certified, and an SA Level member of the Society of Accredited Marine Surveyors® (SAMS®). He is also an experienced former 100 Ton Master Captain.
               </p>
               
               <div className="space-y-4">
