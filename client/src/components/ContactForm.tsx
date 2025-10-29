@@ -88,7 +88,7 @@ export default function ContactForm() {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-white backdrop-blur-sm">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -103,7 +103,7 @@ export default function ContactForm() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card>
+            <Card className="bg-white backdrop-blur-sm">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
               </CardHeader>
@@ -130,7 +130,7 @@ export default function ContactForm() {
               </CardContent>
             </Card>
 
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-white border-primary/30 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-3">Why Choose Our Surveys?</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -146,7 +146,7 @@ export default function ContactForm() {
 
           {/* Quote Request Form */}
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="bg-white backdrop-blur-sm">
               <CardHeader>
                 <CardTitle>Request Your Quote</CardTitle>
               </CardHeader>

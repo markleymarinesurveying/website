@@ -126,8 +126,7 @@ export default function ServicesPage() {
             Marine Survey Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Professional vessel inspection and surveying services across Florida. Every survey follows 
-            USCG requirements and ABYC certified standards, providing you with accurate, unbiased assessments
+            Every survey follows USCG requirements and ABYC certified standards, providing you with accurate, unbiased assessments
             you can trust for your marine investment decisions.
           </p>
         </div>
