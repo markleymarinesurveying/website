@@ -307,6 +307,28 @@
       font-size: 1.5rem !important;
     }
   }
+
+  /* Additional mobile optimizations for widgets */
+  @media (max-width: 480px) {
+    /* Ensure Elfsight widgets are mobile responsive */
+    .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+    
+    /* Optimize credential logos spacing on very small screens */
+    .footer-credentials {
+      gap: 1rem !important;
+    }
+    
+    /* Ensure chatbot doesn't cover content on small screens */
+    .chatbot-dialog {
+      max-height: calc(100vh - 6rem) !important;
+      width: calc(100vw - 1rem) !important;
+      right: 0.5rem !important;
+      bottom: 0.5rem !important;
+    }
+  }
 }
 
 /**

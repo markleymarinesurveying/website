@@ -132,7 +132,7 @@ export default function ChatBot() {
       {/* Chat Dialog */}
       {isOpen && (
         <div
-          className="fixed bottom-4 right-4 z-[9999] w-80 h-96 animate-in slide-in-from-bottom-2"
+          className="fixed bottom-4 right-4 z-[9999] w-80 h-96 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] animate-in slide-in-from-bottom-2 sm:w-80 sm:h-96"
           style={{ position: 'fixed', bottom: '1rem', right: '1rem' }}
         >
           <Card className="h-full flex flex-col shadow-2xl border-primary/20">
@@ -214,12 +214,12 @@ export default function ChatBot() {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder="Ask about marine surveys..."
-                    className="flex-1"
+                    className="flex-1 text-sm"
                   />
-                  <Button 
+                  <Button
                     onClick={handleSendMessage}
                     size="sm"
-                    className="px-3"
+                    className="px-3 flex-shrink-0"
                   >
                     <Send className="h-4 w-4" />
                   </Button>

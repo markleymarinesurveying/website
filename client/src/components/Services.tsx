@@ -51,10 +51,14 @@ export default function Services() {
           {services.map((service, index) => (
             <Card key={index} className="hover-elevate transition-all duration-300" data-testid={`service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
               <div className="aspect-square relative overflow-hidden rounded-t-lg">
-                <img 
-                  src={service.image} 
-                  alt={`${service.title} - Markley Marine Surveying`}
+                <img
+                  src={service.image}
+                  alt={`${service.title} marine survey services - Professional vessel inspection by Markley Marine Surveying in Florida`}
+                  title={`${service.title} - Expert Marine Survey Services`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  width="400"
+                  height="400"
                 />
               </div>
               

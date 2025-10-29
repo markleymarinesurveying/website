@@ -43,10 +43,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image */}
           <div className="relative">
-            <img 
+            <img
               src={surveyorImage}
-              alt="Professional marine surveyor inspecting vessel - Markley Marine Surveying"
+              alt="Professional marine surveyor Steven Markley conducting vessel inspection - SAMS SA Level Member and ABYC certified expert in Florida"
+              title="Professional Marine Survey Services by Steven Markley"
               className="w-full rounded-lg shadow-lg"
+              loading="lazy"
+              width="600"
+              height="400"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg" />
           </div>

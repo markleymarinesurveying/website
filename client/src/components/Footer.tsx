@@ -41,18 +41,30 @@ export default function Footer() {
           <div className="flex justify-center items-center gap-8 md:gap-12">
             <img
               src={abycLogo}
-              alt="ABYC Certification"
+              alt="ABYC American Boat and Yacht Council Standards Certified - Professional Marine Surveyor Credential"
+              title="ABYC Standards Certified Marine Surveyor"
               className="h-16 md:h-20 w-auto object-contain"
+              loading="lazy"
+              width="80"
+              height="80"
             />
             <img
               src={chapmanLogo}
-              alt="Chapman School of Seamanship"
+              alt="Chapman School of Seamanship Yacht and Small Craft Survey Graduate - Marine Surveyor Education"
+              title="Chapman School of Seamanship Graduate"
               className="h-16 md:h-20 w-auto object-contain"
+              loading="lazy"
+              width="80"
+              height="80"
             />
             <img
               src={samsLogo}
-              alt="SAMS Logo"
+              alt="SAMS Society of Accredited Marine Surveyors SA Level Member - Professional Marine Survey Certification"
+              title="SAMS SA Level Member"
               className="h-16 md:h-20 w-auto object-contain"
+              loading="lazy"
+              width="80"
+              height="80"
             />
           </div>
         </div>
@@ -65,8 +77,12 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <img
                 src={logo}
-                alt="Markley Marine Surveying"
+                alt="Markley Marine Surveying Logo - Professional Marine Survey Services in Florida"
+                title="Markley Marine Surveying - Expert Vessel Inspections"
                 className="h-12 w-auto flex-shrink-0"
+                loading="lazy"
+                width="48"
+                height="48"
               />
               <h3 className="text-xl font-bold break-words">Markley Marine Surveying</h3>
             </div>

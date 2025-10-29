@@ -71,8 +71,12 @@ export default function AboutPage() {
             <div className="relative max-w-sm mx-auto">
               <img
                 src={surveyorImage}
-                alt="Steven Markley - Professional Marine Surveyor"
+                alt="Steven Markley - Professional Marine Surveyor, SAMS SA Level Member, ABYC Standards Certified, Chapman School Graduate"
+                title="Steven Markley - Expert Marine Surveyor in Florida"
                 className="w-full rounded-lg shadow-lg"
+                loading="lazy"
+                width="384"
+                height="500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg" />
             </div>
@@ -109,8 +113,12 @@ export default function AboutPage() {
               <div className="relative">
                 <img
                   src={luxuryYachtImage}
-                  alt="Markley Marine Surveying performing an insurance survey on a yacht in Fort Lauderdale, Florida"
+                  alt="Marine survey vessel inspection showing decades of experience - Markley Marine Surveying serving Florida East and West Coasts"
+                  title="Professional Marine Survey Experience - Florida Marine Inspections"
                   className="w-full rounded-lg shadow-lg"
+                  loading="lazy"
+                  width="600"
+                  height="400"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg" />
               </div>

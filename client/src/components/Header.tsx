@@ -23,8 +23,12 @@ export default function Header() {
         <Link href="/" className="flex items-center space-x-2">
           <img
             src={logo}
-            alt="Markley Marine Surveying"
+            alt="Markley Marine Surveying Logo - Professional Marine Survey Services in Florida"
+            title="Markley Marine Surveying - Expert Marine Surveys"
             className="h-10 w-auto"
+            loading="eager"
+            width="40"
+            height="40"
           />
         </Link>
 
