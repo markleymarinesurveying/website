@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 // Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import ChatBot from "@/components/ChatBot";
 
 // Pages
 import Home from "@/pages/Home";
@@ -33,12 +35,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
           <Header />
           <main className="flex-1">
             <Router />
           </main>
           <Footer />
+          <ScrollToTop />
+          <ChatBot />
         </div>
         <Toaster />
       </TooltipProvider>

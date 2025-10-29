@@ -1,6 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import { useSEO, SEOConfigs } from "@/hooks/useSEO";
 
 const serviceAreas = [
   {
@@ -26,23 +27,26 @@ const serviceAreas = [
 ];
 
 const operatingHours = [
-  { days: "Monday - Friday", hours: "8:00 AM - 6:00 PM" },
-  { days: "Saturday", hours: "8:00 AM - 4:00 PM" },
-  { days: "Sunday", hours: "By Appointment Only" },
+  { days: "Monday - Friday", hours: "7:30 AM - 8:00 PM" },
+  { days: "Saturday", hours: "7:30 AM - 8:00 PM" },
+  { days: "Sunday", hours: "7:30 AM - 8:00 PM" },
   { days: "Emergency Surveys", hours: "Available Upon Request" }
 ];
 
 export default function ContactPage() {
+  // Apply SEO for contact page
+  useSEO(SEOConfigs.contact);
+
   return (
     <div className="min-h-screen bg-background py-8">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Contact & Quote Request
+            Contact
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Ready to schedule your marine survey? Contact us today for professional vessel inspection 
-            services across Florida. We respond to all inquiries within 24 hours.
+            Contact us today for professional vessel inspection 
+            services.
           </p>
         </div>
 
@@ -68,13 +72,6 @@ export default function ContactPage() {
                   </p>
                 </div>
               ))}
-              <div className="pt-4 border-t">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Travel Fees:</strong> We serve the above areas with standard travel fees. 
-                  Additional travel charges may apply for locations outside our primary service areas. 
-                  Contact us for specific pricing.
-                </p>
-              </div>
             </CardContent>
           </Card>
 
@@ -115,13 +112,13 @@ export default function ContactPage() {
                 </a>
                 
                 <a 
-                  href="mailto:info@markleymarinesurveying.com" 
+                  href="mailto:markleymarinesurveying@gmail.com"
                   className="flex items-center space-x-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
                   data-testid="contact-quick-email"
                 >
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">info@markleymarinesurveying.com</p>
+                    <p className="font-medium text-foreground">markleymarinesurveying@gmail.com</p>
                     <p className="text-sm text-muted-foreground">Email for detailed inquiries</p>
                   </div>
                 </a>

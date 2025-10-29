@@ -2,45 +2,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, FileText, Shield, Search, Users } from "lucide-react";
-import centerConsoleImage from "@assets/generated_images/Center_console_boat_10b5e474.png";
-import sailboatImage from "@assets/generated_images/Professional_sailboat_image_c219e993.png";
-import sportFishingImage from "@assets/generated_images/Sport_fishing_boat_23af46c5.png";
+import centerConsoleImage from "@assets/Photos/centerconsolefromthewater.jpg";
+import sailboatImage from "@assets/Photos/bowflare.jpg";
+import sportFishingImage from "@assets/Photos/express bow.jpg";
 
 const services = [
   {
     title: "Pre-Purchase Survey",
-    description: "Comprehensive vessel inspection for buyers to identify potential issues before purchase. Detailed assessment of hull, engine, electrical, and safety systems.",
+    description: "Comprehensive vessel inspection for buyers. Detailed assessment of hull, engine, electrical, and safety systems to identify potential issues before purchase.",
     icon: <Search className="h-8 w-8 text-primary" />,
     image: centerConsoleImage,
-    features: ["Hull and structural inspection", "Engine and mechanical systems", "Electrical systems review", "Safety equipment check", "Fair market value assessment"]
+    features: ["Hull and structural inspection", "Engine and mechanical systems", "Electrical systems review", "Safety equipment check", "Fair market value assessment"],
+    sectionId: "pre-purchase-survey"
   },
   {
     title: "Insurance Survey",
     description: "Required documentation for marine insurance coverage. Thorough evaluation of vessel condition and compliance with safety standards.",
     icon: <Shield className="h-8 w-8 text-primary" />,
     image: sailboatImage,
-    features: ["Insurance compliance review", "Safety equipment verification", "Structural condition assessment", "USCG requirements check", "Risk assessment documentation"]
-  },
-  {
-    title: "Appraisal Survey",
-    description: "Professional vessel valuation for financing, legal, or personal purposes. Market-based analysis with comparable sales data.",
-    icon: <FileText className="h-8 w-8 text-primary" />,
-    image: sportFishingImage,
-    features: ["Fair market value determination", "Comparable sales analysis", "Condition-based adjustments", "Legal documentation", "Financing support"]
-  },
-  {
-    title: "Vessel Inspection",
-    description: "Detailed inspection for maintenance planning or pre-sale preparation. Identify areas needing attention or repair.",
-    icon: <CheckCircle className="h-8 w-8 text-primary" />,
-    image: centerConsoleImage,
-    features: ["Maintenance recommendations", "Safety compliance check", "Systems performance review", "Cosmetic condition assessment", "Repair prioritization"]
+    features: ["Insurance compliance review", "Safety equipment verification", "Structural condition assessment", "USCG requirements check", "Risk assessment documentation"],
+    sectionId: "insurance-survey"
   },
   {
     title: "Consultations",
     description: "Expert advice on vessel purchases, repairs, or marine-related legal matters. Professional guidance from certified surveyors.",
     icon: <Users className="h-8 w-8 text-primary" />,
-    image: sailboatImage,
-    features: ["Purchase consultation", "Repair guidance", "Legal support", "Expert testimony", "Technical advice"]
+    image: sportFishingImage,
+    features: ["Purchase consultation", "Repair guidance", "Legal support", "Expert testimony", "Technical advice"],
+    sectionId: "marine-consultations"
   }
 ];
 
@@ -54,7 +43,7 @@ export default function Services() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Professional vessel inspection and surveying services across Florida. 
-            Every survey follows USCG requirements and ABYC standards for your peace of mind.
+            Every survey follows USCG requirements and ABYC certified standards for your peace of mind.
           </p>
         </div>
 
@@ -81,19 +70,10 @@ export default function Services() {
                   {service.description}
                 </p>
                 
-                <ul className="space-y-2">
-                  {service.features.slice(0, 3).map((feature, idx) => (
-                    <li key={idx} className="flex items-center space-x-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
                 
-                <Link href="/contact">
-                  <Button 
-                    className="w-full mt-4"
-                    variant="outline"
+                <Link href={`/services#${service.sectionId}`}>
+                  <Button
+                    className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
                     data-testid={`button-quote-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     Get Quote

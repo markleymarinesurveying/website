@@ -2,8 +2,12 @@ import Gallery from "@/components/Gallery";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useSEO, SEOConfigs } from "@/hooks/useSEO";
 
 export default function GalleryPage() {
+  // Apply SEO for gallery page
+  useSEO(SEOConfigs.gallery);
+
   return (
     <div className="min-h-screen bg-background py-8">
       <div className="container max-w-7xl mx-auto px-4">
@@ -12,9 +16,7 @@ export default function GalleryPage() {
             Survey Gallery
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Explore our recent marine survey projects across Florida. Each vessel represents our 
-            commitment to thorough inspection, professional documentation, and client satisfaction. 
-            From luxury yachts to fishing boats, we've surveyed them all.
+            Explore our recent marine survey projects across Florida.
           </p>
         </div>
 
@@ -33,7 +35,7 @@ export default function GalleryPage() {
                 console fishing boats to luxury motor yachts.
               </p>
               <p className="text-muted-foreground">
-                All surveys follow strict USCG requirements and ABYC standards, ensuring you receive 
+                All surveys follow strict USCG requirements and ABYC certified standards, ensuring you receive
                 accurate, unbiased assessments for your marine investment decisions.
               </p>
             </CardContent>

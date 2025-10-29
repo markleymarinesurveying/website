@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@assets/MarineSurvey_logo.webp";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,9 +21,11 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="text-xl font-bold text-primary">
-            Markley Marine Surveying
-          </div>
+          <img
+            src={logo}
+            alt="Markley Marine Surveying"
+            className="h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

@@ -1,32 +1,9 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Star, Quote } from "lucide-react";
-
-// todo: remove mock functionality - this will be replaced with real testimonials
-const testimonials = [
-  {
-    name: "Mike Johnson",
-    vessel: "2019 Sea Ray Sundancer",
-    rating: 5,
-    comment: "Exceptional service! The survey was thorough and helped me avoid a costly purchase. Professional and responsive throughout the process."
-  },
-  {
-    name: "Sarah Williams", 
-    vessel: "2020 Boston Whaler",
-    rating: 5,
-    comment: "Markley Marine provided a detailed insurance survey that met all my insurer's requirements. Quick turnaround and excellent communication."
-  },
-  {
-    name: "David Chen",
-    vessel: "2018 Catalina 355",
-    rating: 5,
-    comment: "Outstanding pre-purchase survey that revealed important issues the seller hadn't disclosed. Saved me thousands. Highly recommend!"
-  }
-];
+import { useSEO, SEOConfigs } from "@/hooks/useSEO";
 
 function TestimonialsSection() {
   return (
@@ -37,36 +14,16 @@ function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what boat owners across Florida 
+            Don't just take our word for it. Here's what boat owners across Florida
             have to say about our marine survey services.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <Quote className="h-8 w-8 text-primary/30 mr-3" />
-                  <div className="flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  "{testimonial.comment}"
-                </p>
-                
-                <div className="border-t pt-4">
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.vessel}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {/* Elfsight All-in-One Reviews Widget */}
+        <div
+          className="elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </section>
   );
@@ -112,6 +69,9 @@ function CallToActionSection() {
 }
 
 export default function Home() {
+  // Apply SEO for homepage
+  useSEO(SEOConfigs.home);
+
   return (
     <div className="min-h-screen">
       <Hero />

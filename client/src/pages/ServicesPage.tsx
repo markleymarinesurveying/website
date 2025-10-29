@@ -2,28 +2,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, FileText, Shield, Search, Users, Clock, DollarSign, FileCheck } from "lucide-react";
+import { useSEO, SEOConfigs } from "@/hooks/useSEO";
 
 const detailedServices = [
   {
     title: "Pre-Purchase Survey",
-    description: "The most comprehensive vessel inspection for potential buyers. Our pre-purchase surveys provide you with detailed information about the vessel's condition, helping you make an informed buying decision and negotiate fairly.",
+    description: "A Pre-Purchase Survey, often referred to as a Condition and Valuation Survey (C&V), is the most comprehensive type of marine survey and is strongly advised (often required) when purchasing a new or used boat.",
     icon: <Search className="h-12 w-12 text-primary" />,
     duration: "4-6 hours",
     deliverable: "Detailed written report within 48 hours",
     price: "Starting at $18-22 per foot",
     whatIsIncluded: [
-      "Complete hull inspection (interior and exterior)",
-      "Engine and propulsion system evaluation", 
-      "Electrical system assessment",
-      "Plumbing and through-hull fittings inspection",
+      "Structural integrity assessment",
+      "Engine and propulsion system evaluation",
+      "Electrical systems assessment",
+      "Fuel systems inspection",
+      "Navigation equipment and electronics review",
+      "Miscellaneous onboard systems inspection",
       "Safety equipment verification",
-      "Navigation and electronics review",
-      "Sea trial (when possible)",
+      "Cosmetic appearance assessment",
+      "Overall maintenance evaluation",
+      "Out-of-water inspection (haul-out required)",
       "Fair market value assessment",
-      "Comprehensive written report with photos",
-      "Prioritized repair recommendations"
+      "Comprehensive written report with photos"
     ],
-    whyYouNeedIt: "Buying a boat is a significant investment. A pre-purchase survey can reveal hidden problems that could cost thousands in repairs, help you negotiate a fair price, and give you peace of mind in your purchase decision."
+    whyYouNeedIt: "This comprehensive inspection can reveal hidden problems that could cost thousands in repairs, help you negotiate a fair price, and provide the detailed documentation needed to confirm the vessel is free of operational hazards, defects, and damages and is appropriately valued for your investment. A proper C&V survey requires the vessel to be hauled out of the water in order to inspect the hull and underwater gear."
   },
   {
     title: "Insurance Survey",
@@ -44,7 +47,7 @@ const detailedServices = [
       "Insurance-compliant documentation",
       "Digital photo documentation"
     ],
-    whyYouNeedIt: "Insurance companies require current surveys to assess risk and determine coverage. Our surveys meet all major insurer requirements and can often help you secure better rates by demonstrating proper vessel maintenance."
+    whyYouNeedIt: "An Insurance Survey is an inspection that your insurance carrier often requires in order for them to bind or renew coverage on your vessel. This inspection is utilized to determine whether or not the vessel is an acceptable risk for the insurance company. The insurance company is especially interested in structural integrity, safety for the vessel's intended use, and the fair market value. Most insurance companies will require a marine survey on older or used vessels. Our surveys meet all major insurer requirements and can often help you secure better rates by demonstrating proper vessel maintenance."
   },
   {
     title: "Appraisal Survey", 
@@ -90,7 +93,7 @@ const detailedServices = [
   },
   {
     title: "Marine Consultations",
-    description: "Expert advice and guidance on vessel purchases, repairs, legal matters, or technical questions. Leverage our expertise for any marine-related decisions.",
+    description: "Expert advice and guidance on vessel purchases, repairs, legal matters, or technical questions. Markley Marine Surveying will be your boat or yacht consultant. Our expertise will be the best investment you'll ever make.",
     icon: <Users className="h-12 w-12 text-primary" />,
     duration: "1-2 hours",
     deliverable: "Written consultation summary",
@@ -107,11 +110,14 @@ const detailedServices = [
       "Written recommendations",
       "Follow-up support"
     ],
-    whyYouNeedIt: "Sometimes you need expert advice without a full survey. Our consultations provide professional guidance for specific questions or situations, helping you make informed decisions."
+    whyYouNeedIt: "Consultations are recommended to ensure that you are buying the right vessel for your needs and that you are correctly interpreting an existing pre-purchase survey from a seller or broker. Sometimes you need expert advice without a full survey. Our consultations provide professional guidance for specific questions or situations, helping you make informed decisions. Markley Marine Surveying will act for and on behalf of owners and buyers, representing their interests during scheduled repair and upgrade projects. We are here to represent your interests every step of the way. It is our goal to turn our clients' visions into a reality while relieving them of the unnecessary stress associated with boat-yards and subcontractors. High standards, attention to detail, commitment, and continued engagement with a project is key to meeting that goal."
   }
 ];
 
 export default function ServicesPage() {
+  // Apply SEO for services page
+  useSEO(SEOConfigs.services);
+
   return (
     <div className="min-h-screen bg-background py-8">
       <div className="container max-w-7xl mx-auto px-4">
@@ -121,14 +127,16 @@ export default function ServicesPage() {
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
             Professional vessel inspection and surveying services across Florida. Every survey follows 
-            USCG requirements and ABYC standards, providing you with accurate, unbiased assessments 
+            USCG requirements and ABYC certified standards, providing you with accurate, unbiased assessments
             you can trust for your marine investment decisions.
           </p>
         </div>
 
         <div className="space-y-16">
-          {detailedServices.map((service, index) => (
-            <Card key={index} className="overflow-hidden" data-testid={`detailed-service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+          {detailedServices.map((service, index) => {
+            const sectionId = service.title.toLowerCase().replace(/\s+/g, '-');
+            return (
+            <Card key={index} id={sectionId} className="overflow-hidden" data-testid={`detailed-service-${sectionId}`}>
               <div className="grid lg:grid-cols-3 gap-0">
                 {/* Service Overview */}
                 <div className="lg:col-span-1 bg-primary/5 p-8">
@@ -199,8 +207,52 @@ export default function ServicesPage() {
                 </div>
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
+
+        {/* Why You Need a Professional Marine Surveyor */}
+        <section className="py-16 bg-primary text-primary-foreground rounded-lg mt-16">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Why You Need a Professional Marine Surveyor for Your Boat or Yacht
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Why a Marine Survey Matters */}
+              <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="space-y-4">
+                  <h3 className="text-xl font-bold text-white">Why a Marine Survey Matters</h3>
+                  <p className="text-blue-100 leading-relaxed">
+                    A marine survey is a detailed evaluation of a vessel's condition, performed to United States Coast Guard and ABYC certified standards. It highlights potential deficiencies, establishes fair market value, and provides essential insight for buyers when negotiating a purchase. Insurance companies also rely on surveys to assess risk and confirm that safety issues are addressed before coverage is issued.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* The SAMS® Advantage */}
+              <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="space-y-4">
+                  <h3 className="text-xl font-bold text-white">The SAMS® Advantage</h3>
+                  <p className="text-blue-100 leading-relaxed">
+                    Choosing a surveyor who is an SA Level member of the Society of Accredited Marine Surveyors® | SAMS® means you're working with a professional dedicated to accuracy, integrity, and ongoing education. SAMS® members follow nationally recognized standards and ethical practices, giving buyers, owners, and insurers confidence in every report.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Our Commitment */}
+              <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="space-y-4">
+                  <h3 className="text-xl font-bold text-white">Our Commitment</h3>
+                  <p className="text-blue-100 leading-relaxed">
+                    At Markley Marine Surveying, we conduct thorough inspections, explain every step of the process, and make sure you understand the findings. Our goal is not only to evaluate your vessel, but also to give you the knowledge and peace of mind to make informed decisions.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         {/* Call to Action */}
         <div className="text-center mt-16">

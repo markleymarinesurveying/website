@@ -72,8 +72,8 @@ export default function ContactForm() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email", 
-      content: "info@markleymarinesurveying.com",
-      link: "mailto:info@markleymarinesurveying.com"
+      content: "markleymarinesurveying@gmail.com",
+      link: "mailto:markleymarinesurveying@gmail.com"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -134,8 +134,8 @@ export default function ContactForm() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-3">Why Choose Our Surveys?</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• SAMS® certified marine surveyors</li>
-                  <li>• USCG and ABYC standards compliance</li>
+                  <li>• SAMS® SA Level member marine surveyors</li>
+                  <li>• USCG requirements and ABYC certified standards compliance</li>
                   <li>• Detailed written reports</li>
                   <li>• Fast turnaround times</li>
                   <li>• Competitive pricing</li>

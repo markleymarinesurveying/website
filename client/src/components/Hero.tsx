@@ -19,16 +19,11 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Pre-Purchase & Insurance 
-          <br />
-          <span className="text-blue-200">Marine Surveyors</span>
-          <br />
-          in Florida
+          <span className="text-white-200">Markley Marine Surveying</span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-          Professional marine survey and vessel inspection services across Florida's East and West Coasts. 
-          SAMS certified surveyors providing detailed, unbiased surveys you can trust.
+          Professional marine survey and vessel inspection services across Florida's East and West Coasts.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -58,11 +53,11 @@ export default function Hero() {
         <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-blue-100">
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-success rounded-full"></div>
-            <span>SAMS® Certified</span>
+            <span>SAMS® SA Level Member</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-success rounded-full"></div>
-            <span>ABYC Standards</span>
+            <span>ABYC Standards Certified</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-success rounded-full"></div>

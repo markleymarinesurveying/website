@@ -1,5 +1,9 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@assets/MarineSurvey_logo.webp";
+import abycLogo from "@assets/Photos/abyc-cert-blue-small.jpeg";
+import chapmanLogo from "@assets/Photos/chpaman.png";
+import samsLogo from "@assets/Photos/SAMS Logo-Photoroom.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,11 +17,11 @@ export default function Footer() {
   ];
 
   const services = [
-    "Pre-Purchase Survey",
-    "Insurance Survey", 
-    "Appraisal Survey",
-    "Vessel Inspection",
-    "Marine Consultations"
+    { name: "Pre-Purchase Survey", href: "/services#pre-purchase-survey" },
+    { name: "Insurance Survey", href: "/services#insurance-survey" },
+    { name: "Appraisal Survey", href: "/services#appraisal-survey" },
+    { name: "Vessel Inspection", href: "/services#vessel-inspection" },
+    { name: "Marine Consultations", href: "/services#marine-consultations" }
   ];
 
   const serviceAreas = [
@@ -31,14 +35,44 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
+      {/* Credentials Logo Section */}
+      <div className="bg-white py-8">
+        <div className="container max-w-7xl mx-auto px-4">
+          <div className="flex justify-center items-center gap-8 md:gap-12">
+            <img
+              src={abycLogo}
+              alt="ABYC Certification"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+            <img
+              src={chapmanLogo}
+              alt="Chapman School of Seamanship"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+            <img
+              src={samsLogo}
+              alt="SAMS Logo"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+      
       <div className="container max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Markley Marine Surveying</h3>
+            <div className="flex items-center space-x-3">
+              <img
+                src={logo}
+                alt="Markley Marine Surveying"
+                className="h-12 w-auto flex-shrink-0"
+              />
+              <h3 className="text-xl font-bold break-words">Markley Marine Surveying</h3>
+            </div>
             <p className="text-sm text-blue-100 leading-relaxed">
-              Professional marine survey and vessel inspection services across Florida. 
-              SAMS certified surveyors providing detailed, unbiased surveys you can trust.
+              Professional marine survey and vessel inspection services across Florida.
+              SAMS® SA Level member surveyors providing detailed, unbiased surveys you can trust.
             </p>
             
             {/* Contact Info */}
@@ -51,13 +85,13 @@ export default function Footer() {
                 <Phone className="h-4 w-4" />
                 <span>(561) 504-9576</span>
               </a>
-              <a 
-                href="mailto:info@markleymarinesurveying.com" 
-                className="flex items-center space-x-2 text-sm text-blue-100 hover:text-white transition-colors"
+              <a
+                href="mailto:markleymarinesurveying@gmail.com"
+                className="flex items-start space-x-2 text-sm text-blue-100 hover:text-white transition-colors"
                 data-testid="footer-email"
               >
-                <Mail className="h-4 w-4" />
-                <span>info@markleymarinesurveying.com</span>
+                <Mail className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                <span className="break-all">markleymarinesurveying@gmail.com</span>
               </a>
               <div className="flex items-center space-x-2 text-sm text-blue-100">
                 <MapPin className="h-4 w-4" />
@@ -90,8 +124,15 @@ export default function Footer() {
             <h4 className="font-semibold text-white">Our Services</h4>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service} className="text-sm text-blue-100">
-                  {service}
+                <li key={service.name}>
+                  <Link href={service.href}>
+                    <button
+                      className="text-sm text-blue-100 hover:text-white transition-colors text-left"
+                      data-testid={`footer-service-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {service.name}
+                    </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -117,11 +158,11 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-4 text-xs text-blue-100">
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
-                <span>SAMS® Certified</span>
+                <span>SAMS® SA Level Member</span>
               </span>
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
-                <span>ABYC Standards</span>
+                <span>ABYC Standards Certified</span>
               </span>
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>

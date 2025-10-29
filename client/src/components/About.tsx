@@ -1,15 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Award, Users, Shield } from "lucide-react";
-import surveyorImage from "@assets/generated_images/Marine_surveyor_yacht_inspection_27b96526.png";
+import surveyorImage from "@assets/generated_images/Sport_fishing_boat_23af46c5.png";
 
 const credentials = [
   {
-    title: "SAMS® Certified",
-    description: "Society of Accredited Marine Surveyors® Associate Member",
+    title: "SAMS® SA Level Member",
+    description: "Society of Accredited Marine Surveyors® SA Level Member",
     icon: <Award className="h-6 w-6 text-primary" />
   },
   {
-    title: "ABYC Standards",
+    title: "ABYC Standards Certified",
     description: "American Boat and Yacht Council certified professional",
     icon: <Shield className="h-6 w-6 text-primary" />
   },
@@ -22,7 +22,7 @@ const credentials = [
 
 const whyChooseUs = [
   "Detailed, unbiased marine surveys you can rely on",
-  "USCG requirements and ABYC standards compliance",
+  "USCG requirements and ABYC certified standards compliance",
   "Comprehensive reporting with clear documentation",
   "Extensive experience across all vessel types",
   "Professional guidance throughout the process",
@@ -117,19 +117,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Mission Statement */}
-        <div className="mt-16 text-center">
-          <Card className="p-8 bg-primary/5 border-primary/20">
-            <CardContent className="space-y-4">
-              <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                To provide boat owners, buyers, and marine industry professionals with accurate, 
-                comprehensive, and unbiased marine surveys that promote safe boating and informed 
-                decision-making throughout Florida's coastal waters.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
