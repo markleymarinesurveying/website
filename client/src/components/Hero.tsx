@@ -1,67 +1,95 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import heroImage from "@assets/generated_images/Luxury_yacht_hero_image_4dd2724f.png";
+import bannerImage from "@assets/Photos/hero image-1.png";
+import samsLogo from "@assets/Photos/SAMS Logo-Photoroom.png";
+import abycLogo from "@assets/Photos/abyc-cert-blue-small.jpeg";
+import chapmanLogo from "@assets/Photos/chpaman.png";
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-        }}
-      />
-      
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-primary/60" />
-      
-      {/* Hero Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          <span className="text-white-200">Markley Marine Surveying</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-          Professional marine survey and vessel inspection services across Florida's East and West Coasts.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <section className="relative min-h-screen lg:h-[80vh] lg:max-h-[900px] flex flex-col lg:flex-row">
+      {/* Left Sidebar - White Background */}
+      <div className="w-full lg:w-1/4 bg-white p-4 sm:p-6 lg:p-10 flex flex-col justify-center relative z-10 min-h-[60vh] lg:min-h-full">
+        {/* Hexagonal Buttons */}
+        <div className="space-y-3 sm:space-y-4 mb-8 lg:mb-12">
           <Link href="/contact">
-            <Button 
-              size="lg"
-              className="bg-success hover:bg-success/90 text-white px-8 py-3 text-lg"
+            <div
+              className="w-full bg-blue-100 hover:bg-blue-100/80 text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg transition-colors cursor-pointer flex items-center justify-center"
+              style={{
+                clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)',
+                minHeight: '48px'
+              }}
               data-testid="button-schedule-survey"
             >
-              Schedule a Survey
-            </Button>
+              Schedule A Survey
+            </div>
           </Link>
           
-          <a href="tel:5615049576">
-            <Button 
-              variant="outline"
-              size="lg"
-              className="px-8 py-3 text-lg bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+          <a href="tel:5615049576" className="block">
+            <div
+              className="w-full bg-blue-100 hover:bg-blue-100/80 text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-colors cursor-pointer flex items-center justify-center shadow-lg"
+              style={{
+                clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)',
+                minHeight: '48px'
+              }}
               data-testid="button-call-now"
             >
               Call (561) 504-9576
-            </Button>
+            </div>
           </a>
         </div>
         
-        {/* Credentials */}
-        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-blue-100">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-success rounded-full"></div>
-            <span>SAMS® SA Level Member</span>
+        {/* Certification Logos */}
+        <div className="space-y-4 sm:space-y-6">
+          <div className="flex flex-col items-center">
+            <img
+              src={samsLogo}
+              alt="SAMS SA Member"
+              className="h-16 sm:h-20 lg:h-24 w-auto mb-2"
+            />
+            <span className="text-xs sm:text-sm font-medium text-gray-600">SAMS® SA Member</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-success rounded-full"></div>
-            <span>ABYC Standards Certified</span>
+          
+          <div className="flex flex-col items-center">
+            <img
+              src={abycLogo}
+              alt="ABYC Standards"
+              className="h-16 sm:h-20 lg:h-24 w-auto mb-2"
+            />
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-success rounded-full"></div>
-            <span>USCG Compliant</span>
+          
+          <div className="flex flex-col items-center">
+            <img
+              src={chapmanLogo}
+              alt="Chapman"
+              className="h-16 sm:h-20 lg:h-24 w-auto mb-2"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Right Section - Banner Image */}
+      <div className="w-full lg:w-3/4 relative h-64 sm:h-80 md:h-96 lg:h-full">
+        <img
+          src={bannerImage}
+          alt="Marine Survey Services - Boat on water"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '50% 40%' }}
+        />
+        
+        {/* Text Overlay - Responsive */}
+        <div className="absolute top-0 left-0 right-0 flex justify-center px-2">
+          <div
+            className="bg-blue-100/65 text-white px-4 sm:px-8 lg:px-12 py-2 sm:py-3 lg:py-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal text-center w-full max-w-none font-sans tracking-wide"
+            style={{
+              clipPath: 'polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%)',
+              minHeight: '40px',
+              fontFamily: 'system-ui, -apple-system, sans-serif'
+            }}
+          >
+            <span className="block leading-tight">
+              Professional Marine Surveyor And Vessel Inspection Services Across Florida's East And West Coasts
+            </span>
           </div>
         </div>
       </div>

@@ -43,9 +43,9 @@ function CallToActionSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button 
+              <Button
                 size="lg"
-                className="bg-success hover:bg-success/90 text-white px-8 py-3"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
                 data-testid="button-cta-quote"
               >
                 Get Your Quote

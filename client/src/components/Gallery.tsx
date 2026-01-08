@@ -1,88 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Anchor } from "lucide-react";
-import centerConsoleImage from "@assets/generated_images/Center_console_boat_10b5e474.png";
-import sailboatImage from "@assets/generated_images/Professional_sailboat_image_c219e993.png";
-import sportFishingImage from "@assets/generated_images/Sport_fishing_boat_23af46c5.png";
-import heroImage from "@assets/generated_images/Luxury_yacht_hero_image_4dd2724f.png";
-
-// todo: remove mock functionality - this will be replaced with real gallery data
-const mockGalleryItems = [
-  {
-    id: 1,
-    images: [centerConsoleImage],
-    vesselType: "Center Console",
-    year: "2019",
-    make: "Boston Whaler",
-    model: "270 Dauntless",
-    location: "Jupiter, FL",
-    date: "2024-01-15",
-    surveyType: "Pre-Purchase",
-    description: "Comprehensive pre-purchase survey for this well-maintained center console fishing boat."
-  },
-  {
-    id: 2,
-    images: [sailboatImage],
-    vesselType: "Sailboat",
-    year: "2016",
-    make: "Catalina",
-    model: "355",
-    location: "Fort Lauderdale, FL",
-    date: "2024-01-10",
-    surveyType: "Insurance",
-    description: "Insurance survey for this beautiful cruising sailboat with recent upgrades."
-  },
-  {
-    id: 3,
-    images: [sportFishingImage],
-    vesselType: "Sport Fishing",
-    year: "2020",
-    make: "Viking",
-    model: "44 Open",
-    location: "West Palm Beach, FL",
-    date: "2024-01-08",
-    surveyType: "Appraisal",
-    description: "Appraisal survey for financing purposes on this offshore sport fishing vessel."
-  },
-  {
-    id: 4,
-    images: [heroImage],
-    vesselType: "Motor Yacht",
-    year: "2017",
-    make: "Sea Ray",
-    model: "Sundancer 400",
-    location: "Miami, FL",
-    date: "2024-01-05",
-    surveyType: "Pre-Purchase",
-    description: "Detailed pre-purchase inspection of this luxury motor yacht with twin diesel engines."
-  },
-  {
-    id: 5,
-    images: [centerConsoleImage],
-    vesselType: "Center Console",
-    year: "2021",
-    make: "Grady-White",
-    model: "376 Canyon",
-    location: "Stuart, FL",
-    date: "2024-01-03",
-    surveyType: "Insurance",
-    description: "Insurance compliance survey for this offshore fishing boat with latest safety equipment."
-  },
-  {
-    id: 6,
-    images: [sailboatImage],
-    vesselType: "Catamaran",
-    year: "2018",
-    make: "Lagoon",
-    model: "42",
-    location: "Key Largo, FL",
-    date: "2023-12-28",
-    surveyType: "Pre-Purchase",
-    description: "Comprehensive survey of this spacious cruising catamaran perfect for extended voyages."
-  }
-];
+import { Calendar, MapPin, Anchor, Loader2 } from "lucide-react";
+import { fetchSurveyGallery, transformSurveyToGalleryItem } from "@/sanity/queries";
+import { GalleryItem } from "@/sanity/types";
 
 const surveyTypeColors = {
   "Pre-Purchase": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
@@ -94,18 +16,98 @@ const surveyTypeColors = {
 export default function Gallery() {
   const [filter, setFilter] = useState("All");
   const [visibleItems, setVisibleItems] = useState(6);
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
 
   const filters = ["All", "Pre-Purchase", "Insurance", "Appraisal", "Consultation"];
+
+  const toggleCardExpansion = (cardId: string) => {
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(cardId)) {
+        newSet.delete(cardId);
+      } else {
+        newSet.add(cardId);
+      }
+      return newSet;
+    });
+  };
+
+  const isCardExpanded = (cardId: string) => expandedCards.has(cardId);
+
+  const truncateText = (text: string, maxLength: number = 120) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + "...";
+  };
+
+  // Fetch survey data from Sanity on component mount
+  useEffect(() => {
+    async function loadSurveys() {
+      try {
+        setLoading(true);
+        setError(null);
+        const surveys = await fetchSurveyGallery();
+        const transformedItems = surveys.map(transformSurveyToGalleryItem);
+        setGalleryItems(transformedItems);
+      } catch (err) {
+        setError('Failed to load survey gallery. Please try again later.');
+        console.error('Error loading surveys:', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadSurveys();
+  }, []);
   
-  const filteredItems = filter === "All" 
-    ? mockGalleryItems 
-    : mockGalleryItems.filter(item => item.surveyType === filter);
+  const filteredItems = filter === "All"
+    ? galleryItems
+    : galleryItems.filter((item: GalleryItem) => item.surveyType === filter);
 
   const displayedItems = filteredItems.slice(0, visibleItems);
 
   const loadMore = () => {
     setVisibleItems(prev => Math.min(prev + 6, filteredItems.length));
   };
+
+  // Loading state
+  if (loading) {
+    return (
+      <section className="py-16 bg-muted/30">
+        <div className="container max-w-7xl mx-auto px-4">
+          <div className="flex justify-center items-center min-h-[400px]">
+            <div className="text-center">
+              <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
+              <p className="text-muted-foreground">Loading survey gallery...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <section className="py-16 bg-muted/30">
+        <div className="container max-w-7xl mx-auto px-4">
+          <div className="flex justify-center items-center min-h-[400px]">
+            <div className="text-center">
+              <p className="text-red-600 mb-4">{error}</p>
+              <Button
+                onClick={() => window.location.reload()}
+                variant="outline"
+              >
+                Retry
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-muted/30">
@@ -131,17 +133,17 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedItems.map((item) => (
+          {displayedItems.map((item: GalleryItem) => (
             <Card key={item.id} className="hover-elevate transition-all duration-300 overflow-hidden" data-testid={`gallery-item-${item.id}`}>
               <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src={item.images[0]} 
-                  alt={`${item.year} ${item.make} ${item.model} - ${item.surveyType} Survey`}
+                <img
+                  src={item.images[0] || '/placeholder-boat.jpg'}
+                  alt={`${item.year ? item.year + ' ' : ''}${item.make ? item.make + ' ' : ''}${item.model || item.title} - ${item.surveyType} Survey`}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute top-3 right-3">
-                  <Badge 
+                  <Badge
                     className={`${surveyTypeColors[item.surveyType as keyof typeof surveyTypeColors]} border-0`}
                   >
                     {item.surveyType}
@@ -153,23 +155,40 @@ export default function Gallery() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="font-semibold text-lg text-foreground">
-                      {item.year} {item.make} {item.model}
+                      {item.year && item.make && item.model
+                        ? `${item.year} ${item.make} ${item.model}`
+                        : item.vesselName || item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground flex items-center mt-1">
                       <Anchor className="h-4 w-4 mr-1" />
                       {item.vesselType}
+                      {item.vesselLength && ` • ${item.vesselLength}ft`}
                     </p>
                   </div>
                 </div>
                 
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {item.description}
-                </p>
+                <div className="text-sm text-muted-foreground">
+                  <p className={isCardExpanded(item.id) ? "" : "line-clamp-2"}>
+                    {isCardExpanded(item.id) ? item.description : truncateText(item.description)}
+                  </p>
+                  {item.description && item.description.length > 120 && (
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleCardExpansion(item.id);
+                      }}
+                      className="text-blue-600 hover:text-blue-700 text-xs font-medium mt-1 transition-colors"
+                      aria-label={isCardExpanded(item.id) ? "Show less" : "Read more"}
+                    >
+                      {isCardExpanded(item.id) ? "Show less" : "Read more"}
+                    </button>
+                  )}
+                </div>
                 
                 <div className="space-y-2 pt-2 border-t">
                   <div className="flex items-center text-xs text-muted-foreground">
                     <MapPin className="h-3 w-3 mr-1" />
-                    {item.location}
+                    {item.location || 'Florida'}
                   </div>
                   <div className="flex items-center text-xs text-muted-foreground">
                     <Calendar className="h-3 w-3 mr-1" />
@@ -184,7 +203,7 @@ export default function Gallery() {
         {/* Load More Button */}
         {visibleItems < filteredItems.length && (
           <div className="text-center mt-8">
-            <Button 
+            <Button
               onClick={loadMore}
               variant="outline"
               size="lg"
@@ -195,9 +214,14 @@ export default function Gallery() {
           </div>
         )}
 
-        {filteredItems.length === 0 && (
+        {/* Empty state */}
+        {filteredItems.length === 0 && !loading && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No surveys found for the selected filter.</p>
+            <p className="text-muted-foreground">
+              {galleryItems.length === 0
+                ? "No surveys available yet. Check back soon!"
+                : "No surveys found for the selected filter."}
+            </p>
           </div>
         )}
       </div>

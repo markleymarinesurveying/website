@@ -59,8 +59,8 @@ export default function Footer() {
             />
             <img
               src={samsLogo}
-              alt="SAMS Society of Accredited Marine Surveyors SA Level Member - Professional Marine Survey Certification"
-              title="SAMS SA Level Member"
+              alt="SAMS Society of Accredited Marine Surveyors SA Member - Professional Marine Survey Certification"
+              title="SAMS SA Member"
               className="h-16 md:h-20 w-auto object-contain"
               loading="lazy"
               width="80"
@@ -87,8 +87,8 @@ export default function Footer() {
               <h3 className="text-xl font-bold break-words">Markley Marine Surveying</h3>
             </div>
             <p className="text-sm text-blue-100 leading-relaxed">
-              Professional marine survey and vessel inspection services across Florida.
-              SAMS® SA Level member surveyors providing detailed, unbiased surveys you can trust.
+              Professional Marine Survey And Vessel Inspection Services Across Florida.
+              SAMS® SA Member Surveyor Providing Detailed, Unbiased Surveys You Can Trust.
             </p>
             
             {/* Contact Info */}
@@ -174,15 +174,11 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-4 text-xs text-blue-100">
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
-                <span>SAMS® SA Level Member</span>
+                <span>SAMS® SA Member</span>
               </span>
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
                 <span>ABYC Standards Certified</span>
-              </span>
-              <span className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
-                <span>USCG Compliant</span>
               </span>
               <span className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-blue-300 rounded-full"></div>

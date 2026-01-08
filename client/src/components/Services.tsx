@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: "Consultations",
-    description: "Expert advice on vessel purchases, repairs, or marine-related legal matters. Professional guidance from certified surveyors.",
+    description: "Expert advice on vessel purchases or repairs. Professional guidance from surveyors.",
     icon: <Users className="h-8 w-8 text-primary" />,
     image: sportFishingImage,
     features: ["Purchase consultation", "Repair guidance", "Legal support", "Expert testimony", "Technical advice"],
@@ -43,7 +43,7 @@ export default function Services() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto"> 
             Professional vessel inspection and surveying services across Florida.
-            Every survey follows USCG requirements and ABYC certified standards for your peace of mind.
+            Every survey follows USCG requirements and ABYC standards for your peace of mind.
           </p>
         </div>
 
@@ -56,6 +56,7 @@ export default function Services() {
                   alt={`${service.title} marine survey services - Professional vessel inspection by Markley Marine Surveying in Florida`}
                   title={`${service.title} - Expert Marine Survey Services`}
                   className="w-full h-full object-cover"
+                  style={service.title === "Insurance Survey" ? { objectPosition: '42% center' } : {}}
                   loading="lazy"
                   width="400"
                   height="400"
@@ -77,7 +78,7 @@ export default function Services() {
                 
                 <Link href={`/services#${service.sectionId}`}>
                   <Button
-                    className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
                     data-testid={`button-quote-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     Get Quote

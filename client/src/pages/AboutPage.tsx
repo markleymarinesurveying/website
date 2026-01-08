@@ -10,8 +10,8 @@ const stevenCredentials = [
   "Graduate of the University of Maryland",
   "Chapman School of Seamanship - Yacht and Small Craft Surveying Graduate",
   "ABYC Standards Certified",
-  "Society of Accredited Marine Surveyors® (SAMS®) SA Level Member",
-  "100 Ton Master Captain",
+  "Society of Accredited Marine Surveyors® | SAMS® SA Member",
+  "Former 100 Ton Master Captain",
   "25+ Years Marine Industry Experience"
 ];
 
@@ -26,7 +26,7 @@ const experienceAreas = [
 const vesselTypes = [
   "Power and sail vessels from 16' to 110'",
   "Pre-purchase and insurance marine surveys",
-  "ABYC certified standards compliance",
+  "ABYC standards compliance",
   "U.S. Coast Guard 33 and 46 Code of Federal Regulations",
   "Detailed professional documentation"
 ];
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 Meet Steven Markley
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Owner Steven Markley is a dedicated professional with a deep respect for the marine industry and a lifelong passion for boats. Steven is a graduate of the University of Maryland and the Chapman School of Seamanship - Yacht and Small Craft Surveying, is ABYC Standards Certified, and an SA Level member of the Society of Accredited Marine Surveyors® (SAMS®). He is also an experienced former 100 Ton Master Captain.
+                Owner Steven Markley is a dedicated professional with a deep respect for the marine industry and a lifelong passion for boats. Steven is a graduate of the University of Maryland and the Chapman School of Seamanship - Yacht and Small Craft Surveying, is ABYC Standards Certified, and an SA member of the Society of Accredited Marine Surveyors® (SAMS®). He is also an experienced former 100 Ton Master Captain.
               </p>
               
               <div className="space-y-4">
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="relative max-w-sm mx-auto">
               <img
                 src={surveyorImage}
-                alt="Steven Markley - Professional Marine Surveyor, SAMS SA Level Member, ABYC Standards Certified, Chapman School Graduate"
+                alt="Steven Markley - Professional Marine Surveyor, SAMS SA Member, ABYC Standards Certified, Chapman School Graduate"
                 title="Steven Markley - Expert Marine Surveyor in Florida"
                 className="w-full rounded-lg shadow-lg"
                 loading="lazy"
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <CardContent className="space-y-6">
                 <h3 className="text-2xl font-bold text-foreground">Survey Standards & Coverage</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  At Markley Marine Surveying, we inspect a wide range of vessels, both power and sail, from 16' to 110'. All pre-purchase and insurance marine surveys are performed using ABYC certified standards, as well as U.S. Coast Guard 33 and 46 Code of Federal Regulations.
+                  At Markley Marine Surveying, we inspect a wide range of vessels, both power and sail, from 16' to 110'. All pre-purchase and insurance marine surveys are performed using ABYC standards, as well as U.S. Coast Guard 33 and 46 Code of Federal Regulations.
                 </p>
                 <div className="space-y-3">
                   {vesselTypes.map((type, index) => (
@@ -173,7 +173,7 @@ export default function AboutPage() {
               Real-World Marine Survey Experience
             </h2>
             <p className="text-xl text-blue-100 max-w-5xl mx-auto leading-relaxed">
-              Marine Surveyor working across Florida, including pre-purchase marine surveys, insurance surveys, and appraisal inspections. Trusted expertise from an SA Level member of the Society of Accredited Marine Surveyors® | SAMS® and ABYC certified standards professional provides reliable reports you can use with confidence when buying, selling, or insuring your boat.
+              Marine Surveyor working across Florida, including pre-purchase marine surveys, insurance surveys, and appraisal inspections. Trusted expertise from an SA member of the Society of Accredited Marine Surveyors® | SAMS® and ABYC standards certified professional provides reliable reports you can use with confidence when buying, selling, or insuring your boat.
             </p>
           </div>
         </section>
@@ -200,9 +200,9 @@ export default function AboutPage() {
                   </Button>
                 </Link>
                 <a href="tel:5615049576">
-                  <Button 
-                    variant="outline"
+                  <Button
                     size="lg"
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
                     data-testid="button-about-cta-call"
                   >
                     Call (561) 504-9576

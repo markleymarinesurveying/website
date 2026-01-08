@@ -7,7 +7,7 @@ import backgroundImage from "@assets/Photos/rs=w_1920,m.webp";
 const serviceAreas = [
   {
     region: "Treasure Coast",
-    cities: ["Sebastian", "Vero Beach", "Fort Pierce", "Port St. Lucie", "Stuart"],
+    cities: ["Stuart", "Port St. Lucie", "Fort Pierce", "Vero Beach", "Sebastian"],
     description: "Comprehensive marine survey services along Florida's Treasure Coast"
   },
   {
@@ -92,7 +92,7 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-3">Emergency Surveys</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Need an urgent survey for insurance claims, legal proceedings, or time-sensitive purchases?
+                  Need an urgent survey for insurance claims or time-sensitive purchases?
                   We offer expedited survey services with priority scheduling.
                 </p>
                 <p className="text-xs text-muted-foreground">

@@ -18,7 +18,7 @@ const predefinedResponses: { [key: string]: string } = {
   prepurchase: "A pre-purchase survey is essential before buying any boat! Our comprehensive inspection covers:\n\n✅ Hull and structural inspection\n✅ Engine and mechanical systems\n✅ Electrical systems review\n✅ Safety equipment check\n✅ Fair market value assessment\n\nReady to get a quote for your vessel?",
   insurance: "Insurance surveys ensure your vessel meets safety standards and coverage requirements:\n\n✅ Insurance compliance review\n✅ Safety equipment verification\n✅ Structural condition assessment\n✅ USCG requirements check\n✅ Risk assessment documentation\n\nWould you like a quote for your insurance survey?",
   consultation: "Our marine consultations provide expert guidance on:\n\n✅ Purchase consultation\n✅ Repair guidance\n✅ Legal support\n✅ Expert testimony\n✅ Technical advice\n\nLet's discuss your specific needs - shall we get you a quote?",
-  credentials: "Steven Markley is highly qualified with:\n\n🎓 University of Maryland Graduate\n🎓 Chapman School of Seamanship Graduate\n⚓ SAMS® SA Level Member\n⚓ ABYC Standards Certified\n⚓ Former 100 Ton Master Captain\n⚓ 25+ Years Marine Industry Experience\n\nYou're in expert hands! Ready for your survey quote?",
+  credentials: "Steven Markley is highly qualified with:\n\n🎓 University of Maryland Graduate\n🎓 Chapman School of Seamanship Graduate\n⚓ SAMS® SA Member\n⚓ ABYC Standards Certified\n⚓ Former 100 Ton Master Captain\n⚓ 25+ Years Marine Industry Experience\n\nYou're in expert hands! Ready for your survey quote?",
   areas: "We proudly serve Florida's East and West Coasts:\n\n🌊 **East Coast**: Jupiter, Stuart, West Palm Beach, Fort Lauderdale, Miami\n🌊 **West Coast**: Tampa, Sarasota, Fort Myers\n\nWhich area is your vessel located in? Let's get you a personalized quote!",
   pricing: "Our survey pricing is typically $15-22 per foot, depending on the vessel type and survey complexity. For an accurate quote tailored to your specific vessel, I'd love to connect you with our quote form!",
   contact: "Ready to get started? The best way to get your personalized quote is through our contact form. It only takes a minute and Steven will get back to you promptly with detailed pricing and availability!",
@@ -196,8 +196,8 @@ export default function ChatBot() {
               {/* Get Quote CTA */}
               <div className="p-3 border-t bg-success/10">
                 <Link href="/contact">
-                  <Button 
-                    className="w-full bg-success hover:bg-success/90 text-white"
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                     onClick={() => setIsOpen(false)}
                   >
                     Get Your Quote Now

@@ -35,7 +35,7 @@ export default function GalleryPage() {
                 console fishing boats to luxury motor yachts.
               </p>
               <p className="text-muted-foreground">
-                All surveys follow strict USCG requirements and ABYC certified standards, ensuring you receive
+                All surveys follow strict USCG requirements and ABYC standards, ensuring you receive
                 accurate, unbiased assessments for your marine investment decisions.
               </p>
             </CardContent>
@@ -47,12 +47,12 @@ export default function GalleryPage() {
                 Your Vessel Could Be Next
               </h3>
               <p className="text-muted-foreground mb-4">
-                Whether you need a pre-purchase survey, insurance documentation, or appraisal services, 
-                we're here to help. Each survey is tailored to your specific needs and vessel type.
+                Whether you need a pre-purchase survey, insurance survey, or appraisal services,
+                we're here to help. Each marine survey is tailored to your specific needs and vessel type.
               </p>
               <Link href="/contact">
-                <Button 
-                  className="w-full bg-success hover:bg-success/90 text-white"
+                <Button
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                   data-testid="button-gallery-cta"
                 >
                   Schedule Your Survey

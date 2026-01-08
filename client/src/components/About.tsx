@@ -4,12 +4,12 @@ import surveyorImage from "@assets/generated_images/Sport_fishing_boat_23af46c5.
 
 const credentials = [
   {
-    title: "SAMS® SA Level Member",
-    description: "Society of Accredited Marine Surveyors® SA Level Member",
+    title: "SAMS® SA Member",
+    description: "Society of Accredited Marine Surveyors® SA Member",
     icon: <Award className="h-6 w-6 text-primary" />
   },
   {
-    title: "ABYC Standards Certified",
+    title: "ABYC Standards",
     description: "American Boat and Yacht Council certified professional",
     icon: <Shield className="h-6 w-6 text-primary" />
   },
@@ -22,7 +22,7 @@ const credentials = [
 
 const whyChooseUs = [
   "Detailed, unbiased marine surveys you can rely on",
-  "USCG requirements and ABYC certified standards compliance",
+  "Follows USCG requirements and ABYC standards",
   "Comprehensive reporting with clear documentation",
   "Extensive experience across all vessel types",
   "Professional guidance throughout the process",
@@ -30,7 +30,7 @@ const whyChooseUs = [
 ];
 
 const serviceAreas = [
-  "Treasure Coast: Sebastian, Vero Beach, Fort Pierce, Port St. Lucie, Stuart",
+  "Treasure Coast: Stuart, Port St. Lucie, Fort Pierce, Vero Beach, Sebastian",
   "Palm Beaches: Hobe Sound, Jupiter, Tequesta, North Palm Beach, West Palm Beach",
   "Gold Coast: Boynton Beach, Delray Beach, Boca Raton, Pompano Beach, Fort Lauderdale, Miami",
   "West Coast: Tampa, Sarasota, Fort Myers"
@@ -45,7 +45,7 @@ export default function About() {
           <div className="relative">
             <img
               src={surveyorImage}
-              alt="Professional marine surveyor Steven Markley conducting vessel inspection - SAMS SA Level Member and ABYC certified expert in Florida"
+              alt="Professional marine surveyor Steven Markley conducting vessel inspection - SAMS SA Member and ABYC expert in Florida"
               title="Professional Marine Survey Services by Steven Markley"
               className="w-full rounded-lg shadow-lg"
               loading="lazy"
@@ -62,8 +62,8 @@ export default function About() {
                 About Markley Marine Surveying
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                At <strong>Markley Marine Surveying</strong>, we provide professional marine survey and vessel 
-                inspection services across Florida's East and West Coasts. As certified professionals, we deliver 
+                At <strong>Markley Marine Surveying</strong>, we provide professional marine survey and vessel
+                inspection services across Florida's East and West Coasts. As CERTIFIED PROFESSIONALS, we deliver
                 detailed pre-purchase, insurance, and appraisal surveys that follow USCG requirements and ABYC standards.
               </p>
               <p className="text-muted-foreground leading-relaxed">

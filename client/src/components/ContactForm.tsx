@@ -134,8 +134,8 @@ export default function ContactForm() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-3">Why Choose Our Surveys?</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• SAMS® SA Level member marine surveyors</li>
-                  <li>• USCG requirements and ABYC certified standards compliance</li>
+                  <li>• SAMS® SA member marine surveyors</li>
+                  <li>• USCG requirements and ABYC standards compliance</li>
                   <li>• Detailed written reports</li>
                   <li>• Fast turnaround times</li>
                   <li>• Competitive pricing</li>
@@ -342,9 +342,9 @@ export default function ContactForm() {
                       )}
                     />
 
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-success hover:bg-success/90 text-white"
+                    <Button
+                      type="submit"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                       disabled={isSubmitting}
                       data-testid="button-submit-quote"
                     >
