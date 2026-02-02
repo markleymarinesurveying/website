@@ -20,17 +20,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white border-b">
       <div className="container flex h-20 items-center justify-between max-w-7xl mx-auto px-4">
         {/* Logo and Company Name */}
-        <Link href="/" className="flex items-center space-x-4">
+        <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
           <img
             src={logo}
             alt="Markley Marine Surveying Logo - Professional Marine Survey Services in Florida"
             title="Markley Marine Surveying - Expert Marine Surveys"
-            className="h-16 w-auto"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
             loading="eager"
             width="64"
             height="64"
           />
-          <div className="text-sm sm:text-base md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary tracking-wider whitespace-nowrap" style={{fontFamily: "'Saira Condensed', 'Rajdhani', 'Barlow Condensed', sans-serif", fontWeight: '700', letterSpacing: '0.1em'}}>
+          <div className="text-xs sm:text-sm md:text-xl lg:text-2xl xl:text-3xl font-bold text-primary tracking-wider whitespace-nowrap" style={{fontFamily: "'Saira Condensed', 'Rajdhani', 'Barlow Condensed', sans-serif", fontWeight: '700', letterSpacing: '0.1em'}}>
             MARKLEY MARINE SURVEYING
           </div>
         </Link>

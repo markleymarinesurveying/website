@@ -50,12 +50,12 @@ export default function ContactPage() {
     >
       {/* Content */}
       <div className="relative z-10">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Contact
           </h1>
-          <p className="text-xl text-white max-w-4xl mx-auto">
+          <p className="text-lg sm:text-xl text-white max-w-4xl mx-auto px-4">
             Contact us today for professional vessel inspection
             services.
           </p>
@@ -64,24 +64,30 @@ export default function ContactPage() {
         <ContactForm />
 
         {/* Additional Information */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-8">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid gap-6 lg:grid-cols-2 lg:gap-8">
           {/* Service Areas - Compact */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <Card className="h-fit bg-white backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <MapPin className="h-5 w-5 text-primary" />
+              <CardHeader className="pb-3 sm:pb-6">
+                <CardTitle className="flex items-center space-x-2 text-base sm:text-lg">
+                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
                   <span>Service Areas</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4 pt-0">
                 {serviceAreas.map((area, index) => (
-                  <div key={index} className="border-l-4 border-l-primary pl-4">
-                    <h4 className="font-semibold text-foreground mb-1">{area.region}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{area.description}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {area.cities.join(" • ")}
-                    </p>
+                  <div key={index} className="border-l-4 border-l-primary pl-3 sm:pl-4">
+                    <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">{area.region}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-2">{area.description}</p>
+                    <div className="text-xs text-muted-foreground">
+                      <div className="flex flex-wrap gap-1">
+                        {area.cities.map((city, cityIndex) => (
+                          <span key={cityIndex} className="whitespace-nowrap">
+                            {city}{cityIndex < area.cities.length - 1 ? " •" : ""}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </CardContent>
@@ -89,9 +95,9 @@ export default function ContactPage() {
 
             {/* Emergency Surveys - Moved here for symmetry */}
             <Card className="bg-white border-primary/30 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-foreground mb-3">Emergency Surveys</h3>
-                <p className="text-sm text-muted-foreground mb-3">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="font-semibold text-foreground mb-3 text-sm sm:text-base">Emergency Surveys</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-3">
                   Need an urgent survey for insurance claims or time-sensitive purchases?
                   We offer expedited survey services with priority scheduling.
                 </p>
@@ -103,50 +109,50 @@ export default function ContactPage() {
           </div>
 
           {/* Operating Hours & Contact */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <Card className="bg-white backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-primary" />
+              <CardHeader className="pb-3 sm:pb-6">
+                <CardTitle className="flex items-center space-x-2 text-base sm:text-lg">
+                  <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
                   <span>Operating Hours</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-2 sm:space-y-3 pt-0">
                 {operatingHours.map((schedule, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
-                    <span className="font-medium text-foreground">{schedule.days}</span>
-                    <span className="text-muted-foreground">{schedule.hours}</span>
+                    <span className="font-medium text-foreground text-xs sm:text-sm">{schedule.days}</span>
+                    <span className="text-muted-foreground text-xs sm:text-sm">{schedule.hours}</span>
                   </div>
                 ))}
               </CardContent>
             </Card>
 
             <Card className="bg-white backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle>Quick Contact</CardTitle>
+              <CardHeader className="pb-3 sm:pb-6">
+                <CardTitle className="text-base sm:text-lg">Quick Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4 pt-0">
                 <a
                   href="tel:5615049576"
-                  className="flex items-center space-x-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  className="flex items-center space-x-3 p-2 sm:p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
                   data-testid="contact-quick-phone"
                 >
-                  <Phone className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">(561) 504-9576</p>
-                    <p className="text-sm text-muted-foreground">Call for immediate assistance</p>
+                  <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-medium text-foreground text-sm sm:text-base">(561) 504-9576</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Call for immediate assistance</p>
                   </div>
                 </a>
                 
                 <a
                   href="mailto:markleymarinesurveying@gmail.com"
-                  className="flex items-center space-x-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  className="flex items-center space-x-3 p-2 sm:p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
                   data-testid="contact-quick-email"
                 >
-                  <Mail className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">markleymarinesurveying@gmail.com</p>
-                    <p className="text-sm text-muted-foreground">Email for detailed inquiries</p>
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-medium text-foreground text-xs sm:text-sm break-all">markleymarinesurveying@gmail.com</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Email for detailed inquiries</p>
                   </div>
                 </a>
               </CardContent>
