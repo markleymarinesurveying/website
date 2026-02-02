@@ -30,7 +30,7 @@ export default function Header() {
             width="64"
             height="64"
           />
-          <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary tracking-wider" style={{fontFamily: "'Saira Condensed', 'Rajdhani', 'Barlow Condensed', sans-serif", fontWeight: '700', letterSpacing: '0.1em'}}>
+          <div className="text-sm sm:text-base md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary tracking-wider whitespace-nowrap" style={{fontFamily: "'Saira Condensed', 'Rajdhani', 'Barlow Condensed', sans-serif", fontWeight: '700', letterSpacing: '0.1em'}}>
             MARKLEY MARINE SURVEYING
           </div>
         </Link>
