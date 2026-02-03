@@ -2,14 +2,18 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, X, Send, ArrowRight } from "lucide-react";
-import { Link } from "wouter";
+import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 
 interface Message {
   id: number;
   text: string;
   isUser: boolean;
   timestamp: Date;
+}
+
+interface ConversationMessage {
+  role: 'user' | 'assistant';
+  content: string;
 }
 
 const predefinedResponses: { [key: string]: string } = {
@@ -37,13 +41,15 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: predefinedResponses.greeting,
+      text: "Hello! I'm here to help you with marine surveying questions. Are you looking for a pre-purchase survey, insurance survey, or consultation?",
       isUser: false,
       timestamp: new Date()
     }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [showQuickButtons, setShowQuickButtons] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
 
   const addMessage = (text: string, isUser: boolean) => {
     const newMessage: Message = {
@@ -55,7 +61,42 @@ export default function ChatBot() {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const generateResponse = (userInput: string): string => {
+  const callChatAPI = async (message: string): Promise<string> => {
+    try {
+      const response = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message,
+          conversationHistory
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Invalid response format - functions may not be running');
+      }
+
+      const data = await response.json();
+      
+      // Update conversation history
+      setConversationHistory(data.conversationHistory || []);
+      
+      return data.response;
+    } catch (error) {
+      console.error('Chat API error:', error);
+      // Fallback to predefined responses if API fails
+      return generateFallbackResponse(message);
+    }
+  };
+
+  const generateFallbackResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
     
     if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
@@ -89,28 +130,49 @@ export default function ChatBot() {
     return predefinedResponses.default;
   };
 
-  const handleSendMessage = () => {
-    if (inputValue.trim()) {
-      addMessage(inputValue, true);
-      setShowQuickButtons(false);
-      
-      setTimeout(() => {
-        const response = generateResponse(inputValue);
-        addMessage(response, false);
-      }, 1000);
-      
+  const handleSendMessage = async () => {
+    if (inputValue.trim() && !isLoading) {
+      const userMessage = inputValue.trim();
+      addMessage(userMessage, true);
       setInputValue("");
+      setShowQuickButtons(false);
+      setIsLoading(true);
+      
+      try {
+        const response = await callChatAPI(userMessage);
+        addMessage(response, false);
+      } catch (error) {
+        console.error('Error sending message:', error);
+        addMessage("I apologize, but I'm having trouble responding right now. Please try again later.", false);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
-  const handleQuickButton = (key: string) => {
-    const response = predefinedResponses[key];
-    addMessage(response, false);
+  const handleQuickButton = async (key: string) => {
+    if (isLoading) return;
+    
+    // For quick buttons, we can use predefined responses or send to API
+    const buttonText = quickButtons.find(btn => btn.key === key)?.text || "";
+    addMessage(buttonText, true);
     setShowQuickButtons(false);
+    setIsLoading(true);
+    
+    try {
+      const response = await callChatAPI(buttonText);
+      addMessage(response, false);
+    } catch (error) {
+      console.error('Error with quick button:', error);
+      const fallback = predefinedResponses[key] || predefinedResponses.default;
+      addMessage(fallback, false);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && !isLoading) {
       handleSendMessage();
     }
   };
@@ -119,21 +181,35 @@ export default function ChatBot() {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 h-14 w-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg z-[9999] animate-pulse"
-          style={{ position: 'fixed', bottom: '1rem', right: '1rem' }}
-          data-testid="chat-button"
+        <div
+          className="fixed bottom-4 right-4 z-[9999]"
+          style={{ 
+            position: 'fixed', 
+            bottom: '1rem', 
+            right: '1rem',
+            zIndex: 9999
+          }}
         >
-          <MessageCircle className="h-6 w-6 text-white" />
-        </Button>
+          <Button
+            onClick={() => setIsOpen(true)}
+            className="h-14 w-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg animate-pulse"
+            data-testid="chat-button"
+          >
+            <MessageCircle className="h-6 w-6 text-white" />
+          </Button>
+        </div>
       )}
 
       {/* Chat Dialog */}
       {isOpen && (
         <div
-          className="fixed bottom-4 right-4 z-[9999] w-80 h-96 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] animate-in slide-in-from-bottom-2 sm:w-80 sm:h-96"
-          style={{ position: 'fixed', bottom: '1rem', right: '1rem' }}
+          className="fixed z-[9999] w-80 h-96 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] animate-in slide-in-from-bottom-2 sm:w-96 sm:h-[32rem] lg:w-[28rem] lg:h-[36rem]"
+          style={{ 
+            position: 'fixed', 
+            bottom: '1rem', 
+            right: '1rem',
+            zIndex: 9999
+          }}
         >
           <Card className="h-full flex flex-col shadow-2xl border-primary/20">
             <CardHeader className="bg-primary text-primary-foreground p-4 rounded-t-lg">
@@ -172,6 +248,18 @@ export default function ChatBot() {
                     </div>
                   </div>
                 ))}
+                
+                {/* Loading indicator */}
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="max-w-[80%] p-3 rounded-lg text-sm bg-muted text-foreground">
+                      <div className="flex items-center space-x-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <span>Thinking...</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Quick Action Buttons */}
@@ -193,19 +281,6 @@ export default function ChatBot() {
                 </div>
               )}
 
-              {/* Get Quote CTA */}
-              <div className="p-3 border-t bg-success/10">
-                <Link href="/contact">
-                  <Button
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get Your Quote Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-
               {/* Input */}
               <div className="p-3 border-t bg-background">
                 <div className="flex space-x-2">
@@ -213,15 +288,21 @@ export default function ChatBot() {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask about marine surveys..."
+                    placeholder={isLoading ? "Please wait..." : "Ask about marine surveys..."}
                     className="flex-1 text-sm"
+                    disabled={isLoading}
                   />
                   <Button
                     onClick={handleSendMessage}
                     size="sm"
                     className="px-3 flex-shrink-0"
+                    disabled={isLoading}
                   >
-                    <Send className="h-4 w-4" />
+                    {isLoading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="h-4 w-4" />
+                    )}
                   </Button>
                 </div>
               </div>
