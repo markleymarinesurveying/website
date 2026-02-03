@@ -25,9 +25,8 @@ export default function Hero() {
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-              Pre-Purchase & Insurance<br />
+              Pre-Purchase | Insurance<br />
               <span className="text-blue-300">Marine Surveyors</span><br />
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">in Florida</span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 font-medium leading-relaxed max-w-4xl mx-auto lg:mx-0">
               Professional Marine Surveyor And Vessel Inspection Services Across Florida's East And West Coasts

@@ -20,18 +20,10 @@ function TestimonialsSection() {
         </div>
 
         {/* Elfsight All-in-One Reviews Widget */}
-        <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0">
-          <div
-            className="elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 overflow-hidden"
-            data-elfsight-app-lazy
-            style={{
-              paddingLeft: '20px',
-              paddingRight: '20px',
-              marginLeft: '-20px',
-              marginRight: '-20px'
-            }}
-          ></div>
-        </div>
+        <div
+          className="elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </section>
   );
