@@ -442,3 +442,48 @@
     inset: -1px;
   }
 }
+
+/* Elfsight Reviews Widget Mobile Responsiveness */
+.elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Fix navigation arrows on mobile */
+@media (max-width: 768px) {
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+  }
+  
+  /* Target Elfsight navigation buttons specifically */
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 [class*="navigation"],
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 [class*="arrow"],
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 [class*="btn"],
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 button {
+    margin: 0 8px !important;
+    min-width: 40px !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  /* Ensure the review slider container has enough space */
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 [class*="slider"],
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 [class*="carousel"] {
+    padding: 0 50px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Additional mobile fixes for smaller screens */
+@media (max-width: 480px) {
+  .elfsight-app-1ed2be0b-90c0-40f2-8be5-bf3931283745 {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    margin-left: -25px !important;
+    margin-right: -25px !important;
+  }
+}
