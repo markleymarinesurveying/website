@@ -4,16 +4,23 @@ import bannerImage from "@assets/Photos/hero image-1.png";
 export default function Hero() {
   return (
     <section className="relative min-h-screen lg:h-[80vh] lg:max-h-[900px] overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Mobile Optimized */}
       <div className="absolute inset-0">
+        {/* Mobile Background - Full Cover */}
+        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
+        
         <img
           src={bannerImage}
           alt="Marine Survey Services - Boat on water"
-          className="w-full h-full object-contain sm:object-cover"
+          className="w-full h-full object-cover"
           style={{ objectPosition: '60% 20%' }}
         />
-        {/* Semi-transparent Navy Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/40 via-slate-800/30 to-slate-700/20"></div>
+        
+        {/* Mobile Specific Overlay */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-slate-900/70 via-slate-800/40 to-transparent"></div>
+        
+        {/* Desktop Overlay */}
+        <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-slate-900/40 via-slate-800/30 to-slate-700/20"></div>
       </div>
 
       {/* Content Container */}
