@@ -28,12 +28,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-        
-        {/* Mobile Content positioned in bottom area */}
-        <div className="block sm:hidden h-3/5"></div>
-        <div className="max-w-7xl mx-auto w-full h-2/5 flex flex-col justify-center sm:justify-between sm:flex-1 sm:h-auto">
+      {/* Content Container - Desktop */}
+      <div className="relative z-10 h-full hidden sm:flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
           
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
@@ -81,6 +78,57 @@ export default function Hero() {
           <p className="text-sm sm:text-base text-blue-200 font-medium">
             SAMS® SA Member — ABYC Standards Certified — Chapman Graduate
           </p>
+        </div>
+      </div>
+
+      {/* Content Container - Mobile (Absolutely positioned at bottom) */}
+      <div className="absolute inset-x-0 bottom-0 z-10 h-2/5 flex flex-col justify-center px-4 py-8 sm:hidden">
+        <div className="max-w-7xl mx-auto w-full">
+          
+          {/* Hero Title and Subtitle */}
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-white mb-3 leading-tight">
+              Pre-Purchase | Insurance<br />
+              <span className="text-blue-300">Marine Surveyors</span><br />
+            </h1>
+            <p className="text-base text-blue-100 font-medium leading-relaxed max-w-4xl mx-auto">
+              Professional Marine Surveyor And Vessel Inspection Services Across Florida's East Coast
+            </p>
+          </div>
+
+          {/* Hexagonal Buttons - Side by Side */}
+          <div className="flex flex-col items-center justify-center gap-3 mb-6">
+            <Link href="/contact">
+              <div
+                className="bg-blue-100 hover:bg-blue-100/80 text-primary px-5 py-3 text-base font-semibold shadow-lg transition-colors cursor-pointer flex items-center justify-center w-56"
+                style={{
+                  clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)',
+                  minHeight: '48px'
+                }}
+              >
+                Schedule A Survey
+              </div>
+            </Link>
+            
+            <a href="tel:5615049576">
+              <div
+                className="bg-blue-100 hover:bg-blue-100/80 text-primary px-5 py-3 text-base font-semibold transition-colors cursor-pointer flex items-center justify-center shadow-lg w-56"
+                style={{
+                  clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)',
+                  minHeight: '48px'
+                }}
+              >
+                Call (561) 504-9576
+              </div>
+            </a>
+          </div>
+
+          {/* Certifications Line */}
+          <div className="w-full text-center">
+            <p className="text-xs text-blue-200 font-medium">
+              SAMS® SA Member — ABYC Standards Certified — Chapman Graduate
+            </p>
+          </div>
         </div>
       </div>
     </section>
