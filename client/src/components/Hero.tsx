@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Background - Mobile */}
       <div className="absolute inset-0 block sm:hidden bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900">
         {/* Mobile Hero Image positioned at top */}
-        <div className="absolute top-0 left-0 right-0 h-1/2">
+        <div className="absolute top-0 left-0 right-0 h-3/5">
           <img
             src={bannerImage}
             alt="Marine Survey Services - Boat on water"
@@ -31,9 +31,9 @@ export default function Hero() {
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
-        {/* Mobile Content positioned in bottom half */}
-        <div className="block sm:hidden h-1/2"></div>
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-between">
+        {/* Mobile Content positioned in bottom area */}
+        <div className="block sm:hidden h-3/5"></div>
+        <div className="max-w-7xl mx-auto w-full h-2/5 flex flex-col justify-center sm:justify-between sm:flex-1 sm:h-auto">
           
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
