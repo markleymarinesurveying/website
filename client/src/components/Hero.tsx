@@ -36,8 +36,11 @@ export default function Hero() {
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
+        {/* Mobile Spacer to push content below image */}
+        <div className="block sm:hidden h-2/3"></div>
+        
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-center justify-end">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-center">
           
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
