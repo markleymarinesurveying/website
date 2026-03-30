@@ -9,7 +9,7 @@ export default function Hero() {
         <img
           src={bannerImage}
           alt="Marine Survey Services - Boat on water"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain sm:object-cover"
           style={{ objectPosition: '60% 20%' }}
         />
         {/* Semi-transparent Navy Overlay for readability */}
@@ -29,7 +29,7 @@ export default function Hero() {
               <span className="text-blue-300">Marine Surveyors</span><br />
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 font-medium leading-relaxed max-w-4xl mx-auto lg:mx-0">
-              Professional Marine Surveyor And Vessel Inspection Services Across Florida's East And West Coasts
+              Professional Marine Surveyor And Vessel Inspection Services Across Florida's East Coast
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
         {/* Certifications Line - Bottom of Hero */}
         <div className="w-full text-center">
           <p className="text-sm sm:text-base text-blue-200 font-medium">
-            SAMS® SA Member — ABYC Certified — Chapman Graduate
+            SAMS® SA Member — ABYC Standards Certified — Chapman Graduate
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ const detailedServices = [
     deliverable: "Detailed written report within 3-5 days",
     price: "Starting at $25-35+ per foot",
     whatIsIncluded: [
-      "Structural Assessment",
+      "Structural Condition Assessment",
       "Engine And Propulsion System Evaluation",
       "Electrical Systems Assessment",
       "Fuel System Inspection",
@@ -23,9 +23,10 @@ const detailedServices = [
       "Cosmetic Appearance Assessment",
       "Overall Maintenance Evaluation",
       "Out-Of-Water Inspection (Haul-Out Required)",
-      "Fair Market Value Assessment",
+      "Hull And Deck Condition Evaluation",
       "Check All Onboard Systems",
-      "Comprehensive Written Report With Photos"
+      "Fair Market Evaluation",
+      "Written Report With Photos"
     ],
     whyYouNeedIt: "This comprehensive inspection can reveal hidden problems that could cost thousands in repairs, help you negotiate a fair price, and provide the detailed documentation needed to confirm the vessel is free of operational hazards, defects, and damages and is appropriately valued for your investment. A proper C&V survey requires the vessel to be hauled out of the water in order to inspect the hull and underwater gear."
   },
@@ -44,9 +45,8 @@ const detailedServices = [
       "Navigation Equipment Assessment",
       "Hull And Deck Condition Evaluation",
       "Engine Room Inspection",
-      "Current Market Value Estimation",
-      "Professional Report With Photos",
-      "Digital Photo Documentation"
+      "Fair Market Evaluation",
+      "Written Report With Photos"
     ],
     whyYouNeedIt: "An Insurance Survey is an inspection that your insurance carrier often requires in order for them to bind or renew coverage on your vessel. This inspection is utilized to determine whether or not the vessel is an acceptable risk for the insurance company. The insurance company is especially interested in structural integrity, safety for the vessel's intended use, and the fair market value. Most insurance companies will require a marine survey on older or used vessels. Our surveys meet all major insurer requirements and can often help you secure better rates by demonstrating proper vessel maintenance."
   },
@@ -58,7 +58,6 @@ const detailedServices = [
     deliverable: "Appraisal report within 72 hours",
     price: "Starting at $16-22 per foot",
     whatIsIncluded: [
-      "Current Fair Market Value Determination",
       "Comparable Sales Analysis",
       "Condition-Based Value Adjustments",
       "Equipment And Upgrade Valuations",
@@ -67,7 +66,8 @@ const detailedServices = [
       "Appraisal Report",
       "Replacement Cost Assessment",
       "Depreciation Analysis",
-      "Professional Report With Photos"
+      "Fair Market Evaluation",
+      "Written Report With Photos"
     ],
     whyYouNeedIt: "Accurate vessel valuation is crucial for financing, insurance, or sale preparation. Our appraisals are recognized by banks, insurance companies, and institutions."
   },

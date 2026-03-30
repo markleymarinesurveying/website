@@ -28,9 +28,7 @@ export default function Footer() {
     "Jupiter & Stuart",
     "West Palm Beach",
     "Fort Lauderdale",
-    "Miami-Dade",
-    "Tampa Bay",
-    "Southwest Florida"
+    "Miami-Dade"
   ];
 
   return (
@@ -111,7 +109,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center space-x-2 text-sm text-blue-100">
                 <MapPin className="h-4 w-4" />
-                <span>Florida East & West Coasts</span>
+                <span>Florida East Coast</span>
               </div>
             </div>
           </div>

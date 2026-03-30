@@ -78,7 +78,7 @@ export default function ContactForm() {
     {
       icon: <MapPin className="h-5 w-5" />,
       title: "Service Area",
-      content: "Florida East & West Coasts"
+      content: "Florida East Coast"
     },
     {
       icon: <Clock className="h-5 w-5" />,

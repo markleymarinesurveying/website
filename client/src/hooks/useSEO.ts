@@ -123,8 +123,8 @@ export const useSEO = (seoData: SEOData) => {
 export const SEOConfigs = {
   home: {
     title: "Markley Marine Surveying - SAMS Certified Marine Surveyors in Florida | Pre-Purchase & Insurance Surveys",
-    description: "Professional SAMS certified marine surveyors in Florida. Expert pre-purchase, insurance, and appraisal surveys for boats and yachts. ABYC standards, USCG compliant. Serving East & West Coast Florida.",
-    keywords: "marine surveyor Florida, boat survey, yacht survey, pre-purchase survey, insurance survey, SAMS certified, marine inspection, vessel appraisal, ABYC standards, Jupiter FL, Fort Lauderdale, Miami, Tampa, marine consultant",
+    description: "Professional SAMS certified marine surveyors in Florida. Expert pre-purchase, insurance, and appraisal surveys for boats and yachts. ABYC standards, USCG compliant. Serving East Coast Florida.",
+    keywords: "marine surveyor Florida, boat survey, yacht survey, pre-purchase survey, insurance survey, SAMS certified, marine inspection, vessel appraisal, ABYC standards, Jupiter FL, Fort Lauderdale, Miami, marine consultant",
     canonical: "https://markleymarinesurveying.com/",
     ogTitle: "Markley Marine Surveying - SAMS Certified Marine Surveyors in Florida",
     ogDescription: "Professional SAMS certified marine surveyors in Florida. Expert pre-purchase, insurance, and appraisal surveys for boats and yachts. ABYC standards, USCG compliant.",
@@ -159,7 +159,7 @@ export const SEOConfigs = {
   
   contact: {
     title: "Contact Markley Marine Surveying - Get Your Marine Survey Quote | Florida",
-    description: "Contact Markley Marine Surveying for professional marine survey services in Florida. Call (561) 504-9576 for immediate assistance. Serving East & West Coast Florida. Free quotes available.",
+    description: "Contact Markley Marine Surveying for professional marine survey services in Florida. Call (561) 504-9576 for immediate assistance. Serving East Coast Florida. Free quotes available.",
     keywords: "contact marine surveyor Florida, marine survey quote, boat survey cost, yacht survey pricing, marine surveyor phone number, Florida marine survey contact, Jupiter marine surveyor",
     canonical: "https://markleymarinesurveying.com/contact",
     ogTitle: "Contact Markley Marine Surveying - Get Your Marine Survey Quote",

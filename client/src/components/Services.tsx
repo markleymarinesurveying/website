@@ -12,7 +12,7 @@ const services = [
     description: "Comprehensive vessel inspection for buyers. Detailed assessment of hull, engine, electrical, and safety systems to identify potential issues before purchase.",
     icon: <Search className="h-8 w-8 text-primary" />,
     image: centerConsoleImage,
-    features: ["Hull and structural inspection", "Engine and mechanical systems", "Electrical systems review", "Safety equipment check", "Fair market value assessment"],
+    features: ["Structural condition assessment", "Engine and mechanical systems", "Electrical systems review", "Safety equipment check", "Fair market evaluation"],
     sectionId: "pre-purchase-survey"
   },
   {
@@ -49,7 +49,7 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover-elevate transition-all duration-300" data-testid={`service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+            <Card key={index} className="hover-elevate transition-all duration-300 h-full flex flex-col" data-testid={`service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
               <div className="aspect-square relative overflow-hidden rounded-t-lg">
                 <img
                   src={service.image}
@@ -70,15 +70,14 @@ export default function Services() {
                 </div>
               </CardHeader>
               
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
+              <CardContent className="space-y-4 flex-1 flex flex-col">
+                <p className="text-muted-foreground flex-1">
                   {service.description}
                 </p>
                 
-                
-                <Link href={`/services#${service.sectionId}`}>
+                <Link href={`/services#${service.sectionId}`} className="mt-auto">
                   <Button
-                    className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                     data-testid={`button-quote-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     Get Quote

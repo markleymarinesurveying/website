@@ -20,11 +20,6 @@ const serviceAreas = [
     cities: ["Boynton Beach", "Delray Beach", "Boca Raton", "Pompano Beach", "Fort Lauderdale", "Miami"],
     description: "Expert marine surveys from Boynton Beach to Miami-Dade"
   },
-  {
-    region: "West Coast",
-    cities: ["Tampa", "Sarasota", "Fort Myers"],
-    description: "Quality marine survey services along Florida's Southwest Coast"
-  }
 ];
 
 const operatingHours = [

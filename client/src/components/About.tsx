@@ -26,14 +26,13 @@ const whyChooseUs = [
   "Comprehensive reporting with clear documentation",
   "Extensive experience across all vessel types",
   "Professional guidance throughout the process",
-  "Serving Florida's East and West Coasts"
+  "Serving Florida's East Coast"
 ];
 
 const serviceAreas = [
   "Treasure Coast: Stuart, Port St. Lucie, Fort Pierce, Vero Beach, Sebastian",
   "Palm Beaches: Hobe Sound, Jupiter, Tequesta, North Palm Beach, West Palm Beach",
-  "Gold Coast: Boynton Beach, Delray Beach, Boca Raton, Pompano Beach, Fort Lauderdale, Miami",
-  "West Coast: Tampa, Sarasota, Fort Myers"
+  "Gold Coast: Boynton Beach, Delray Beach, Boca Raton, Pompano Beach, Fort Lauderdale, Miami"
 ];
 
 export default function About() {
@@ -63,7 +62,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 At <strong>Markley Marine Surveying</strong>, we provide professional marine survey and vessel
-                inspection services across Florida's East and West Coasts. As CERTIFIED PROFESSIONALS, we deliver
+                inspection services across Florida's East Coast. As CERTIFIED PROFESSIONALS, we deliver
                 detailed pre-purchase, insurance, and appraisal surveys that follow USCG requirements and ABYC standards.
               </p>
               <p className="text-muted-foreground leading-relaxed">
