@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-16">
         
         {/* Main Content */}
         <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
@@ -37,7 +37,7 @@ export default function Hero() {
           {/* Hero Title and Subtitle */}
           <div className="text-center sm:text-center lg:text-left mb-12 lg:mb-16">
             {/* Main Title - positioned center-left on mobile */}
-            <div className="text-left sm:text-center lg:text-left mb-16 sm:mb-4 lg:mb-6">
+            <div className="text-left sm:text-center lg:text-left mb-20 sm:mb-4 lg:mb-6">
               <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                 Pre-Purchase | Insurance<br />
                 <span className="text-blue-300">Marine Surveyors</span><br />
