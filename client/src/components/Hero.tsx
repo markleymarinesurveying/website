@@ -18,26 +18,26 @@ export default function Hero() {
 
       {/* Background - Mobile */}
       <div className="absolute inset-0 block sm:hidden">
-        {/* Mobile Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
-        
-        {/* Mobile Hero Image positioned at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-2/3">
+        {/* Mobile Hero Image positioned at top */}
+        <div className="absolute top-0 left-0 right-0 h-2/3">
           <img
             src={bannerImage}
             alt="Marine Survey Services - Boat on water"
-            className="w-full h-full object-contain object-bottom"
+            className="w-full h-full object-contain object-top"
           />
           {/* Light overlay on mobile image for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/30"></div>
         </div>
+        
+        {/* Mobile Gradient Background for content area */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-center justify-end">
           
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
