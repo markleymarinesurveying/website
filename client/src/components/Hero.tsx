@@ -17,30 +17,23 @@ export default function Hero() {
       </div>
 
       {/* Background - Mobile */}
-      <div className="absolute inset-0 block sm:hidden">
+      <div className="absolute inset-0 block sm:hidden bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900">
         {/* Mobile Hero Image positioned at top */}
-        <div className="absolute top-0 left-0 right-0 h-2/3">
+        <div className="absolute top-0 left-0 right-0 h-1/2">
           <img
             src={bannerImage}
             alt="Marine Survey Services - Boat on water"
             className="w-full h-full object-contain object-top"
           />
-          {/* Light overlay on mobile image for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/30"></div>
         </div>
-        
-        {/* Mobile Gradient Background for content area */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
-        {/* Mobile Spacer to push content below image */}
-        <div className="block sm:hidden h-2/3"></div>
-        
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-center">
+        {/* Mobile Content positioned in bottom half */}
+        <div className="block sm:hidden h-1/2"></div>
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center sm:justify-between">
           
           {/* Hero Title and Subtitle */}
           <div className="text-center lg:text-left mb-12 lg:mb-16">
