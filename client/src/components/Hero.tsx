@@ -26,7 +26,7 @@ export default function Hero() {
           <img
             src={bannerImage}
             alt="Marine Survey Services - Boat on water"
-            className="w-full h-full object-cover object-bottom"
+            className="w-full h-full object-contain object-bottom"
           />
           {/* Light overlay on mobile image for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
