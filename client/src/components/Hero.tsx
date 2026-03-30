@@ -81,7 +81,7 @@ export default function Hero() {
         </div>
 
         {/* Certifications Line - Bottom of Hero */}
-        <div className="w-full text-center mt-12 sm:mt-0">
+        <div className="w-full text-center mt-6 sm:mt-0">
           <p className="text-sm sm:text-base text-blue-200 font-medium">
             SAMS® SA Member — ABYC Standards Certified — Chapman Graduate
           </p>
