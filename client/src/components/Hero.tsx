@@ -4,23 +4,33 @@ import bannerImage from "@assets/Photos/hero image-1.png";
 export default function Hero() {
   return (
     <section className="relative min-h-screen lg:h-[80vh] lg:max-h-[900px] overflow-hidden">
-      {/* Background Image - Mobile Optimized */}
-      <div className="absolute inset-0">
-        {/* Mobile Background - Full Cover */}
-        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
-        
+      {/* Background - Desktop */}
+      <div className="absolute inset-0 hidden sm:block">
         <img
           src={bannerImage}
           alt="Marine Survey Services - Boat on water"
           className="w-full h-full object-cover"
           style={{ objectPosition: '60% 20%' }}
         />
-        
-        {/* Mobile Specific Overlay */}
-        <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-slate-900/70 via-slate-800/40 to-transparent"></div>
-        
         {/* Desktop Overlay */}
-        <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-slate-900/40 via-slate-800/30 to-slate-700/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/40 via-slate-800/30 to-slate-700/20"></div>
+      </div>
+
+      {/* Background - Mobile */}
+      <div className="absolute inset-0 block sm:hidden">
+        {/* Mobile Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900"></div>
+        
+        {/* Mobile Hero Image positioned at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-2/3">
+          <img
+            src={bannerImage}
+            alt="Marine Survey Services - Boat on water"
+            className="w-full h-full object-cover object-bottom"
+          />
+          {/* Light overlay on mobile image for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+        </div>
       </div>
 
       {/* Content Container */}
@@ -71,7 +81,7 @@ export default function Hero() {
         </div>
 
         {/* Certifications Line - Bottom of Hero */}
-        <div className="w-full text-center">
+        <div className="w-full text-center mt-12 sm:mt-0">
           <p className="text-sm sm:text-base text-blue-200 font-medium">
             SAMS® SA Member — ABYC Standards Certified — Chapman Graduate
           </p>
